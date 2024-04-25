@@ -10,7 +10,7 @@ namespace codilityTests
     public class Sorting
     {
         //Distinct
-        public int solution(int[] A)
+        public int Solution(int[] A)
         {
             int n = A.Length;
             int result = 0;
@@ -30,6 +30,17 @@ namespace codilityTests
                 }
             }
             return result;
+        }
+
+        //MaxProductOfThree
+        public int Solution2(int[] A)
+        {
+            Array.Sort(A);
+        
+            var topMax = A[A.Length - 1] * A[A.Length - 2] * A[A.Length - 3];
+            var bottomMax = A[0] * A[1] * A[A.Length - 1];
+        
+            return Math.Max(topMax, bottomMax);
         }
     }
 }
