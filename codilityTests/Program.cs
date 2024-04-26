@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Text;
 
 //Choose lesson
-var UI = new Test();
+var UI = new StacksAndQueues();
 
 //set inputs
 int inputX = 10, inputY = 1000000000, inputD = 150;
@@ -12,14 +12,15 @@ int input = 0;
 int max = 2;
 int min = 1;
 int number = 100;
-int[] arrInput = [1,0];//createArray(min, max, number); //[1, 2, 3, 1, 3, 4, 6];//[1,2];//
-string stringInput = "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP";
+int[] arrInput = [8, 8, 5, 7, 9, 8, 7, 4, 8];//createArray(min, max, number); //[1, 2, 3, 1, 3, 4, 6];//[1,2];//
+int[] arrInput2 = [0, 0, 0, 0, 0];
+string stringInput = "(((((((()";
 
 //Init timer to messure code efficiency
 var timer = new Stopwatch();
 
 timer.Start();
-string output = UI.solution3(input);
+int output = UI.Solution4(arrInput);
 timer.Stop();
 TimeSpan elapsed = timer.Elapsed;
 

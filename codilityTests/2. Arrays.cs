@@ -9,7 +9,7 @@ namespace codilityTests
     public class Arrays
     {
         //CyclicRotation
-        public int[] solution(int[] A, int K)
+        public int[] Solution(int[] A, int K)
         {
             if(A.Length > 0)
             {

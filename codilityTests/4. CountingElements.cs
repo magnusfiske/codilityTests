@@ -9,7 +9,7 @@ namespace codilityTests
     public class CountingElements
     {
         //FrogRiverOne
-        public int solution(int x, int[] A)
+        public int Solution(int x, int[] A)
         {
             int[] count = new int[x + 1];
             int counter = 0;
@@ -28,7 +28,7 @@ namespace codilityTests
             return -1;
         }
         //PermCheck
-        public int solution2(int[] A)
+        public int Solution2(int[] A)
         {
             int N = A.Length;
             if (!A.OrderBy(x => x).SequenceEqual(Enumerable.Range(1, N)))
@@ -40,14 +40,6 @@ namespace codilityTests
                 return 0;
             }
             return 1;
-        }
-        //MaxCounters
-        //public int solution3(int N, int[] A)
-        //{
-
-        //}
-
-        
-        
+        }      
     }
 }
