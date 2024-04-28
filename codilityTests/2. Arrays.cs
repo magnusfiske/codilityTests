@@ -11,28 +11,58 @@ namespace codilityTests
         //CyclicRotation
         public int[] Solution(int[] A, int K)
         {
-            if(A.Length > 0)
-            {
-                for (int i = 0; i < K; i++)
-                {
-                    A = rotateArray(A);
-                }
-            }
+            int n = A.Length;
 
+            if (n < 2) return A;
+
+            int k = K % n;
+
+            if (k > 0 && n > 0)
+            {
+                int[] tempArr = new int[n];
+                for (int i = 0; i < n; i++)
+                {
+                    int newIndex = i + k;
+                    if (i + k > n - 1)
+                    {
+                        newIndex = (i + k) - n;
+                    }
+                    tempArr[newIndex] = A[i];
+                }
+                return tempArr;
+            }
             return A;
         }
 
-        public int[] rotateArray(int[] A)
+        //OddOccurancesInArray
+        public int Solution2(int[] A)
         {
-            int[] tempArr = new int[A.Length];
+            int n = A.Length;
 
-            for (int i = 0; i < A.Length - 1; i++)
+            if(n == 0) return 0;
+
+            Dictionary<int,int> dict = new Dictionary<int,int>();
+
+            for(int i = 0; i < n; ++i)
             {
-                tempArr[i + 1] = A[i];
+                if (dict.ContainsKey(A[i]))
+                {
+                    dict[A[i]] += 1;
+                }
+                else
+                {
+                    dict.Add(A[i], 1);
+                }
             }
-            tempArr[0] = A[A.Length - 1];
 
-            return tempArr;
+            foreach(KeyValuePair<int,int> pair in dict)
+            {
+                if (pair.Value % 2 != 0)
+                {
+                    return pair.Key;
+                }
+            }
+            return 0;
         }
     }
 }

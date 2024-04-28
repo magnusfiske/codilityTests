@@ -9,7 +9,7 @@ namespace codilityTests
     public class Iterations
     {
         //BinaryGap
-        public int solution(int N)
+        public int Solution(int N)
         {
             var binaryRepresentation = Convert.ToString(N, 2);
             binaryRepresentation = binaryRepresentation.TrimStart('0').TrimEnd('0');

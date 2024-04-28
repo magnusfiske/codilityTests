@@ -49,7 +49,19 @@ namespace codilityTests
         //CountingDiv
         public int Solution2(int A, int B, int K)
         {
-            return B / K - A / K + (A % K == 0 ? 1 : 0);
+            int zeroThroughBDevisableByK = B / K;
+            int zeroThroughADivisableByK = A / K;
+
+            int compensationForPointA = 0;
+
+            if(A% K == 0)
+            {
+                compensationForPointA = 1;
+            }
+
+            return zeroThroughBDevisableByK - zeroThroughADivisableByK + compensationForPointA;
+
+            //return B / K - A / K + (A % K == 0 ? 1 : 0);
         }
     }
 }
