@@ -52,10 +52,12 @@ namespace codilityTests
             {
                 if (A[i] == N+1)
                 {
-                    for(int j = 0; j < N; j++)
-                    {
-                        counters[j] = highestValue; 
-                    }
+                    counters = new int[N];
+                    Array.Fill(counters, highestValue);
+                    //for(int j = 0; j < N; j++)
+                    //{
+                    //    counters[j] = highestValue; 
+                    //}
                 }
                 else
                 {

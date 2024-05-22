@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Text;
 
 //Choose lesson
-var UI = new CountingElements();
+var UI = new Test2();
 
 //set inputs
 int inputX = 10, inputY = 1000000000, inputD = 150;
@@ -12,22 +12,23 @@ int input = 0;
 int max = 2;
 int min = 1;
 int number = 100;
-int[] arrInput = [3, 4, 4, 6, 1, 4, 4];//[23171, 21011, 21123, 21366, 21013, 21367];//createArray(min, max, number); //[1, 2, 3, 1, 3, 4, 6];//[1,2];//
+int[] arrInput = [1, 1000, 80, -91];//[23171, 21011, 21123, 21366, 21013, 21367];//createArray(min, max, number); //[1, 2, 3, 1, 3, 4, 6];//[1,2];//
 int[] arrInput2 = [0, 0, 0, 0, 0];
-string stringInput = "(((((((()";
+string stringInput = "BILLO,NULL,BILL\nOLLO,BBI";
+string[] stringArrInput = ["BILL", "BOB"];
 
 //Init timer to messure code efficiency
 var timer = new Stopwatch();
 
 timer.Start();
-int[] output = UI.Solution3(5, arrInput);
+string output = UI.Solution3(stringInput);
 timer.Stop();
 TimeSpan elapsed = timer.Elapsed;
 
-foreach (int i in output)
-{
-    Console.Write(i + ", ");
-}
+//foreach (int i in output)
+//{
+//    Console.Write(i + ", ");
+//}
 Console.WriteLine("answer: " + output + "\nTime: " + elapsed.Milliseconds);
 
 #region utilities
